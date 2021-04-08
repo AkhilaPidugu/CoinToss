@@ -34,5 +34,15 @@ public class CoinProbabilityTest {
         assertEquals(expectedValue,actualValue);
     }
 
+    @Test
+    void testIfProbabilityOfTossingTwoCoinsSimultaneouslyWithOneCoinSideAsHeadAndOtherCoinSideAsTailIs0Point25() {
+        double expectedValue = 0.25;
+        CoinProbability coin1headProbability = new CoinProbability(headProbability);
+        CoinProbability coin2headProbability = new CoinProbability(headProbability);
+
+        double actualValue = coin2headProbability.probabilityOfTwoEventsThatOccurTogether(coin1headProbability);
+
+        assertEquals(expectedValue,actualValue);
+    }
 
 }
