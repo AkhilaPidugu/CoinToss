@@ -26,4 +26,8 @@ public class CoinProbability {
     public double complement() {
         return 1-this.side;
     }
+
+    public double or(CoinProbability headsOnSecondCoinToss) {
+        return this.side+headsOnSecondCoinToss.side-and(headsOnSecondCoinToss);
+    }
 }
