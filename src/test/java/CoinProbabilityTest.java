@@ -66,4 +66,14 @@ public class CoinProbabilityTest {
         assertEquals(expectedValue,actualValue);
     }
 
+    @Test
+    public void testIfNotGettingTailOnCoinTossIs0Point5() {
+        double expectedValue = 0.5;
+        CoinProbability notTailOnCoinToss = new CoinProbability(tailProbability);
+
+        double actualValue = notTailOnCoinToss.complement();
+
+        assertEquals(expectedValue,actualValue);
+    }
+
 }
