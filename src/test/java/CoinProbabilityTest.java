@@ -52,6 +52,17 @@ public class CoinProbabilityTest {
         CoinProbability headsOnSecondCoinToss = new CoinProbability(headProbability);
 
         double actualValue = tailsOnFirstCoinToss.and(headsOnSecondCoinToss);
+
+        assertEquals(expectedValue,actualValue);
+    }
+
+    @Test
+    public void testIfNotGettingHeadOnCoinTossIs0Point5() {
+        double expectedValue = 0.5;
+        CoinProbability notHeadOnCoinToss = new CoinProbability(headProbability);
+
+        double actualValue = notHeadOnCoinToss.complement();
+
         assertEquals(expectedValue,actualValue);
     }
 

@@ -22,4 +22,8 @@ public class CoinProbability {
     public double and(CoinProbability coinProbability) {
         return this.side*coinProbability.side;
     }
+
+    public double complement() {
+        return 1-this.side;
+    }
 }
