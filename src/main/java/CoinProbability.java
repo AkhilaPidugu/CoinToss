@@ -19,7 +19,7 @@ public class CoinProbability {
         return Double.compare(coinProbability.headProbability, this.tailProbability) == 0;
     }
 
-    public double probabilityOfTwoEventsThatOccurTogether( CoinProbability coinProbability) {
+    public double and(CoinProbability coinProbability) {
         return this.side*coinProbability.side;
     }
 }

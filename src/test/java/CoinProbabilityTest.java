@@ -15,10 +15,10 @@ public class CoinProbabilityTest {
     @Test
     void testIfProbabilityOfTossingTwoCoinsSimultaneouslyWithBothTheSidesAsHeadIs0Point25() {
         double expectedValue = 0.25;
-        CoinProbability coin1headProbability = new CoinProbability(headProbability);
-        CoinProbability coin2headProbability = new CoinProbability(headProbability);
+        CoinProbability headsOnFirstCoinToss = new CoinProbability(headProbability);
+        CoinProbability headsOnSecondCoinToss = new CoinProbability(headProbability);
 
-        double actualValue = coin2headProbability.probabilityOfTwoEventsThatOccurTogether(coin1headProbability);
+        double actualValue = headsOnFirstCoinToss.and(headsOnSecondCoinToss);
 
         assertEquals(expectedValue,actualValue);
     }
@@ -26,10 +26,10 @@ public class CoinProbabilityTest {
     @Test
     void testIfProbabilityOfTossingTwoCoinsSimultaneouslyWithBothTheSidesAsTailIs0Point25() {
         double expectedValue = 0.25;
-        CoinProbability coin1headProbability = new CoinProbability(tailProbability);
-        CoinProbability coin2headProbability = new CoinProbability(tailProbability);
+        CoinProbability tailsOnFirstCoinToss = new CoinProbability(tailProbability);
+        CoinProbability tailsOnSecondCoinToss = new CoinProbability(tailProbability);
 
-        double actualValue = coin2headProbability.probabilityOfTwoEventsThatOccurTogether(coin1headProbability);
+        double actualValue = tailsOnFirstCoinToss.and(tailsOnSecondCoinToss);
 
         assertEquals(expectedValue,actualValue);
     }
@@ -37,10 +37,10 @@ public class CoinProbabilityTest {
     @Test
     void testIfProbabilityOfTossingTwoCoinsSimultaneouslyWithOneCoinSideAsHeadAndOtherCoinSideAsTailIs0Point25() {
         double expectedValue = 0.25;
-        CoinProbability coin1headProbability = new CoinProbability(headProbability);
-        CoinProbability coin2headProbability = new CoinProbability(tailProbability);
+        CoinProbability headsOnFirstCoinToss = new CoinProbability(headProbability);
+        CoinProbability tailsOnSecondCoinToss = new CoinProbability(tailProbability);
 
-        double actualValue = coin2headProbability.probabilityOfTwoEventsThatOccurTogether(coin1headProbability);
+        double actualValue = headsOnFirstCoinToss.and(tailsOnSecondCoinToss);
 
         assertEquals(expectedValue,actualValue);
     }
@@ -48,11 +48,10 @@ public class CoinProbabilityTest {
     @Test
     void testIfProbabilityOfTossingTwoCoinsSimultaneouslyWithOneCoinSideAsTailAndOtherCoinSideAsHeadIs0Point25() {
         double expectedValue = 0.25;
-        CoinProbability coin1headProbability = new CoinProbability(tailProbability);
-        CoinProbability coin2headProbability = new CoinProbability(headProbability);
+        CoinProbability tailsOnFirstCoinToss =  new CoinProbability(tailProbability);
+        CoinProbability headsOnSecondCoinToss = new CoinProbability(headProbability);
 
-        double actualValue = coin2headProbability.probabilityOfTwoEventsThatOccurTogether(coin1headProbability);
-
+        double actualValue = tailsOnFirstCoinToss.and(headsOnSecondCoinToss);
         assertEquals(expectedValue,actualValue);
     }
 
