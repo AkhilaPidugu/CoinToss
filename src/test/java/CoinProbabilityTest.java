@@ -99,7 +99,7 @@ public class CoinProbabilityTest {
     }
 
     @Test
-    public void testIfProbabilityOfOccurringEitherOfTwoEventsAsHeadAndTailOnTossingTwoCoinsIs0Point75() {
+    public void testIfProbabilityOfOccurringEitherOfTwoEventsAsHeadOrTailOnTossingTwoCoinsIs0Point75() {
         double expectedValue = 0.75;
         CoinProbability headsOnFirstCoinToss = new CoinProbability(headProbability);
         CoinProbability tailsOnSecondCoinToss = new CoinProbability(tailProbability);
@@ -110,7 +110,7 @@ public class CoinProbabilityTest {
     }
 
     @Test
-    public void testIfProbabilityOfOccurringEitherOfTwoEventsAsTailAndHeadOnTossingTwoCoinsIs0Point75() {
+    public void testIfProbabilityOfOccurringEitherOfTwoEventsAsTailOrHeadOnTossingTwoCoinsIs0Point75() {
         double expectedValue = 0.75;
         CoinProbability tailsOnFirstCoinToss =  new CoinProbability(tailProbability);
         CoinProbability headsOnSecondCoinToss = new CoinProbability(headProbability);
