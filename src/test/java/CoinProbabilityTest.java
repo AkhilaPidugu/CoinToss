@@ -77,7 +77,7 @@ public class CoinProbabilityTest {
     }
 
     @Test
-    public void testIfProbabilityOfOccurringEitherOfTwoEventsAsHeadOnTossingTwoCoinsIs0Point75() {
+    public void testIfProbabilityOfOccurring_EitherOfHeads_OnTossingTwoCoinsIs0Point75() {
         double expectedValue = 0.75;
         CoinProbability headsOnFirstCoinToss = new CoinProbability(headProbability);
         CoinProbability headsOnSecondCoinToss = new CoinProbability(headProbability);
@@ -88,7 +88,7 @@ public class CoinProbabilityTest {
     }
 
     @Test
-    public void testIfProbabilityOfOccurringEitherOfTwoEventsAsTailOnTossingTwoCoinsIs0Point75() {
+    public void testIfProbabilityOfOccurring_EitherOfTails_OnTossingTwoCoinsIs0Point75() {
         double expectedValue = 0.75;
         CoinProbability tailsOnFirstCoinToss = new CoinProbability(tailProbability);
         CoinProbability tailsOnSecondCoinToss = new CoinProbability(tailProbability);
@@ -98,25 +98,4 @@ public class CoinProbabilityTest {
         assertEquals(expectedValue,actualValue);
     }
 
-    @Test
-    public void testIfProbabilityOfOccurringEitherOfTwoEventsAsHeadOrTailOnTossingTwoCoinsIs0Point75() {
-        double expectedValue = 0.75;
-        CoinProbability headsOnFirstCoinToss = new CoinProbability(headProbability);
-        CoinProbability tailsOnSecondCoinToss = new CoinProbability(tailProbability);
-
-        double actualValue = headsOnFirstCoinToss.or(tailsOnSecondCoinToss);
-
-        assertEquals(expectedValue,actualValue);
-    }
-
-    @Test
-    public void testIfProbabilityOfOccurringEitherOfTwoEventsAsTailOrHeadOnTossingTwoCoinsIs0Point75() {
-        double expectedValue = 0.75;
-        CoinProbability tailsOnFirstCoinToss =  new CoinProbability(tailProbability);
-        CoinProbability headsOnSecondCoinToss = new CoinProbability(headProbability);
-
-        double actualValue = tailsOnFirstCoinToss.or(headsOnSecondCoinToss);
-
-        assertEquals(expectedValue,actualValue);
-    }
 }
